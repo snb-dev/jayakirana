@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-page text-ink-primary font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-orange text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-orange ring-offset-2;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-orange px-6 py-3
+      text-sm font-semibold text-white shadow-sm transition-all duration-200
+      hover:bg-brand-orange-dark hover:shadow-md active:scale-[0.98]
+      disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3
+      text-sm font-semibold text-white transition-all duration-200 hover:bg-white hover:text-brand-dark;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-border px-5 py-2.5
+      text-sm font-semibold text-ink-primary transition-colors hover:border-brand-orange hover:text-brand-orange;
+  }
+
+  .card {
+    @apply rounded-2xl border border-border bg-white shadow-card;
+  }
+
+  .section-heading {
+    @apply text-2xl font-extrabold tracking-tight text-ink-primary sm:text-3xl md:text-4xl;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm text-ink-primary
+      placeholder:text-gray-400 transition-colors focus:border-brand-orange;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .diagonal-stripes {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(249, 115, 22, 0.12) 0px,
+      rgba(249, 115, 22, 0.12) 2px,
+      transparent 2px,
+      transparent 18px
+    );
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to right, black, transparent 78%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
