@@ -2,7 +2,7 @@
 
 A front-end shopping site prototype for Jayakirana, a hardware and home essentials store in Delgoda, Sri Lanka. Built with React, TypeScript, Vite, Tailwind CSS, and Zustand.
 
-Live demo: https://subhash-li.github.io/jayakirana/
+Live demo: https://snb-dev.github.io/jayakirana/
 
 ## What this is
 
